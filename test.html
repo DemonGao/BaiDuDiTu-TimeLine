@@ -1,0 +1,38 @@
+<html>  
+<head>  
+<title>进度条</title>  
+<style type="text/css">  
+.processcontainer{  
+   width:450px;  
+   border:1px solid #6C9C2C;  
+   height:25px;  
+ } 
+#processbar{  
+   background:#95CA0D;  
+   float:left; 
+   height:100%;  
+   text-align:center;  
+   line-height:150%; 
+ }  
+</style>  
+<script type="text/javascript">  
+ function setProcess(){  
+  var processbar = document.getElementById("processbar");  
+  processbar.style.width = parseInt(processbar.style.width) + 1 + "%";
+  processbar.innerHTML = processbar.style.width;  
+  if(processbar.style.width == "100%"){  
+     window.clearInterval(bartimer);  
+  }  
+ }  
+var bartimer = window.setInterval(function(){setProcess();},100);  
+window.onload = function(){  
+   bartimer;  
+}  
+</script>  
+</head>  
+<body>  
+  <div class="processcontainer">  
+   <div id="processbar" style="width:0%;"></div>  
+  </div>  
+</body>  
+</html>
