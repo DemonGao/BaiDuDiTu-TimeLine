@@ -50,7 +50,6 @@ var TimerLine = {
 				icon: myIcon
 			});
 			TimerLine.map.addOverlay(marker);
-			//marker.setLabel(label);
 			//跳动的动画
 			//				marker.setAnimation(BMAP_ANIMATION_BOUNCE);
 			marker.setAnimation(BMAP_ANIMATION_DROP);
@@ -78,30 +77,23 @@ var TimerLine = {
 			console.log(TimerLine.protect.index_label);
 			if(isInterval){
 				TimerLine.protect.index_label++;
-//				console.log(TimerLine.index);
 				if (TimerLine.protect.index_label >= TimerLine.rubbish_datas.length - 1) {
 					TimerLine.protect.index_label = TimerLine.rubbish_datas.length - 1;
 					clearInterval(TimerLine.Interval_label);
 					TimerLine.protect.lock_play=false;
-//					return ;
 				}
 			}
 			
 			if (n == null) {
-				//若n为null 则获取TimerLine.index的值
-//				TimerLine.index==0?TimerLine.index=1:'';
 				if(TimerLine.protect.index_label==0){
 					TimerLine.protect.index_label=1
 				}
 				index = TimerLine.protect.index_label;
 			} else {
-//				console.log(TimerLine.index);
 				index = parseInt(n);
 				TimerLine.protect.index_label = index;
-//				console.log(TimerLine.index);
 			}
 			
-//			console.log(TimerLine.index);
 			var info = datas[index].info;
 			var info_count=0;
 			var addMarker_Interval=setInterval(function(){
@@ -132,16 +124,10 @@ var TimerLine = {
 				var event = e || window.e;
 				var target = event.target || event.srcElement;
 				for(var i=0;i<TimerLine.rubbish_datas.length;i++){
-//					console.log(TimerLine.rubbish_datas[i].date);
 					if(target.innerText==TimerLine.rubbish_datas[i].date){
-//						console.log(TimerLine.index+":"+i);
-//						console.log(TimerLine.protect.index_process);
-//						console.log(TimerLine.protect.index_label);
+//		
 						TimerLine.protect.index_process=i;
 						TimerLine.protect.index_label=i;
-//						console.log(TimerLine.protect.index_process);
-//						console.log(TimerLine.protect.index_label);
-//						console.log(TimerLine.index);
 						//播放解锁
 						if(TimerLine.protect.lock_play)	TimerLine.protect.lock_play=false;
 						TimerLine.Utils.mapSetLabel(TimerLine.rubbish_datas, i,false);
@@ -158,26 +144,19 @@ var TimerLine = {
 				console.log(TimerLine.protect.index_process);
 				console.log(TimerLine.rubbish_datas.length);
 				if(TimerLine.protect.index_process >= TimerLine.rubbish_datas.length-1){
-//					console.log(1);
 					TimerLine.protect.index_process = TimerLine.rubbish_datas.length-1;
 					clearInterval(TimerLine.Interval_process);
 					TimerLine.protect.lock_play=false;
-//					setInterval(function(){$("#timerbtn-play").attr("class","iconfont icon-zanting");},1000);
-//					TimerLine.index = TimerLine.index + 1;
-//					console.log(TimerLine.index);
 				}
 			}
 			var datesDiv = document.getElementById("dates");
 			var processDiv = document.getElementById(TimerLine.data.processDiv);
 			if(index==null){
-//				console.log("index为空  index:"+TimerLine.index);
 				processDiv.style.width =parseInt(processDiv.style.width)+datesDiv.getElementsByTagName('li')[0].offsetWidth+'px';
 			}else{
-//				console.log("index不为空");
 				processDiv.style.width =datesDiv.getElementsByTagName('li')[0].offsetWidth*parseInt(index+1)+'px';
 			}
 			
-//			console.log(processDiv.style.width);
 		}
 		
 	},
@@ -237,57 +216,18 @@ var TimerLine = {
 			var event = e || window.e;
 			var target = event.target || event.srcElement;
 			//播放事件
-//			if (target.id == That.data.btns.play) {
-//				if(TimerLine.protect.lock_play)	return ;		
-//				//如果播放的日期
-////				console.log(TimerLine.index);
-//				if(TimerLine.protect.index_label >= TimerLine.rubbish_datas.length-1){
-//					console.log("重置");
-//					TimerLine.protect.index_label=0;
-//					var processDiv = document.getElementById(TimerLine.data.processDiv);
-//					var datesDiv = document.getElementById("dates");
-//					processDiv.style.width = datesDiv.getElementsByTagName('li')[0].offsetWidth+'px';
-//				}
-//				if(TimerLine.protect.index_process >= TimerLine.rubbish_datas.length-1){
-//					console.log("重置");
-//					TimerLine.protect.index_process=0;
-//				}
-//				TimerLine.Interval_label = setInterval("TimerLine.Utils.mapSetLabel(TimerLine.rubbish_datas,null,true)", 1000);
-//				TimerLine.Interval_process = setInterval("TimerLine.Utils.Setprocess(null,true)",1000);	
-//				//播放枷锁
-//				TimerLine.protect.lock_play=true;
-//				//暂停解锁
-//				TimerLine.protect.lock_stop=false;
-//			}//暂停事件
-//			else if(target.id == That.data.btns.stop){
-//				if(TimerLine.protect.lock_stop)	return ;
-//				TimerLine.Interval_label&&clearInterval(TimerLine.Interval_label);
-//				TimerLine.Interval_process&&clearInterval(TimerLine.Interval_process);
-//				//播放解锁
-//				TimerLine.protect.lock_play=false;
-//				//暂停加锁
-//				TimerLine.protect.lock_stop=true;
-//			}
 			if (target.id == That.data.btns.play) {
 				if(!TimerLine.protect.lock_play){
-//					var isendagin=false;
 					if(TimerLine.protect.index_label >= TimerLine.rubbish_datas.length-1){
 						TimerLine.protect.index_label=0;
 						var processDiv = document.getElementById(TimerLine.data.processDiv);
 						var datesDiv = document.getElementById("dates");
 						processDiv.style.width = datesDiv.getElementsByTagName('li')[0].offsetWidth+'px';
-//						isendagin=true;
 					}
 					if(TimerLine.protect.index_process >= TimerLine.rubbish_datas.length-1){
 						TimerLine.protect.index_process=0;
-//						isendagin=true;
 					}
-//					if(isendagin){
-//						
-//					}else{
-//						$("#timerbtn-play").attr("class","iconfont icon-zanting");
-//					}
-//					document.getElementById("timerbtn-play").setAttribute("class","iconfont icon-zanting1");
+//				
 					TimerLine.Interval_label = setInterval("TimerLine.Utils.mapSetLabel(TimerLine.rubbish_datas,null,true)", 1000);
 					TimerLine.Interval_process = setInterval("TimerLine.Utils.Setprocess(null,true)",1000);	
 					$("#timerbtn-play").attr("class","iconfont icon-zanting1");
@@ -311,7 +251,6 @@ var TimerLine = {
 				TimerLine.Utils.mapSetLabel(TimerLine.rubbish_datas, TimerLine.protect.index_label-1,false);
 				TimerLine.Utils.Setprocess(TimerLine.protect.index_process-1,false);
 				TimerLine.protect.index_process=TimerLine.protect.index_process-1;
-//				console.log(TimerLine.protect.index_process);
 			}
 			if(target.id == That.data.btns.next){
 				if(TimerLine.protect.index_label==TimerLine.rubbish_datas.length-1) return;
