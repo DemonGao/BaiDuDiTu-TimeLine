@@ -26,16 +26,18 @@
 			</div>
 			<div class="toubu">
 				<div class="biaoti">
+					<h3>“****杯”</h3>
+					<h3>第一届深海能量美食垂钓大赛</h3>
 					<p>———— 活动介绍 ————</p>
 				</div>
 			</div>
 			<div class="neirong">
 				<!--<div class="overburden">111</div>-->
 				<ul>
-					<li>
+					<!--<li>
 						<h3>比赛名称:</h3>
 						<p style="text-indent:2em;">“****杯”第一届深海能量美食垂钓大赛</p>
-					</li>
+					</li>-->
 					<li>
 						<h3>报名规则：</h3>
 						<p>1、海钓爱好者，要求身体健康，无重大疾病，适合海钓人群。</p>
@@ -172,56 +174,50 @@
 						<p style="text-indent:2em;">(2)海钓的吃文化（学做渔家菜，配置舟山渔家菜谱、搭浆板酒、做老鼠团、腌制咸鱼等）； 海滩拾趣（捡螺、笼蟹、码头垂钓、小板罾等）； </p>
 					</li>
 				</ul>
-				<button class="btn-register" type="button" data-toggle="modal" data-target="#myModal">报名</button>
+				<p style="text-align: center;font-size: 1.3em;margin-top: 30px;">业余组：<input  form="register" style="margin-right: 50px;" type="radio" name="type" value="业余组"/>专业组：<input  form="register" type="radio" name="type" value="专业组"/></p>
+				<button class="btn-register" type="button" data-toggle="modal" data-target="#myModal">报<span style="margin-left: 2em;"></span>名</button>
 			</div>
 			<div class="modal fade register" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">报名</h4>
+				<div class="modal-dialog" role="document">
+					<form id="registerForm" action="/www.baidu.com">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">报名</h4>
+						</div>
+						<div class="modal-body">
+							<div class="input-group">
+								<span class="input-group-addon">姓<span style="margin-left: 1em;"></span>名</span>
+								<input type="text" class="form-control" placeholder="姓名" id="name">
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon" >电<span style="margin-left: 1em;"></span>话</span>
+								<input type="text" class="form-control" placeholder="电话" id="phonenum">
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon" >邮<span style="margin-left: 1em;"></span>箱</span>
+								<input type="text" class="form-control" placeholder="邮箱" id="email">
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon" >身份证</span>
+								<input type="text" class="form-control" placeholder="身份证" id="idcard">
+							</div>
+							
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="btn-register" class="btn btn-primary">提交</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						</div>
 					</div>
-					<div class="modal-body">
-						<form>
-							<div class="input-group">
-								<span class="input-group-addon" id="basic-addon1">姓<span style="margin-left: 1em;"></span>名</span>
-								<input type="text" class="form-control" placeholder="姓名" aria-describedby="basic-addon1">
-							</div>
-							<div class="input-group">
-								<span class="input-group-addon" id="basic-addon1">电<span style="margin-left: 1em;"></span>话</span>
-								<input type="text" class="form-control" placeholder="电话" aria-describedby="basic-addon1">
-							</div>
-							<div class="input-group">
-								<span class="input-group-addon" id="basic-addon1">邮<span style="margin-left: 1em;"></span>箱</span>
-								<input type="text" class="form-control" placeholder="邮箱" aria-describedby="basic-addon1">
-							</div>
-							<div class="input-group">
-								<span class="input-group-addon" id="basic-addon1">身份证</span>
-								<input type="text" class="form-control" placeholder="身份证" aria-describedby="basic-addon1">
-							</div>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary">提交</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-					</div>
+					</form>
 				</div>
 			</div>
-		</div>
 		</div>
 		<!-- Modal -->
 		
 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script>
-			
-//			$("#myModal").modal().css({
-//               "margin-top": function () {
-//               	console.log(($(this).height() / 2));
-//                   return  "100px";
-//               }
-//           });
-		</script>
+		<script type="text/javascript" src="js/FishingRegister.js" ></script>
 	</body>
 
 </html>

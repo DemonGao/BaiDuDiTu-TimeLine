@@ -60,9 +60,10 @@ img{border:none;}
 
 /*排名*/
 .paiming{min-height:677px;}
-.quanju .toubu{color:#fff;width: 100%; margin-top: 40px;}
+.quanju .toubu{color:#fff;width: 100%; margin-top: 20px;}
 .quanju .toubu .biaoti{text-align: center;margin: 5px 0px 11px;}
 .quanju .toubu .biaoti p{ color: #fff;}
+.quanju .toubu .biaoti h3{margin-top: 0;font-size: 20px; color: #fff;}
 .quanju .toubu .paihang{font-family: '微软雅黑';font-style: normal;}
 .quanju .toubu .paihang .xiexian{display: block;font-size: 20px;color:#fff;}
 .quanju .toubu .paihang .zuo{background: url(juxing.png);background-size: 100% 100%;width: 89px;height: 30px;text-align: center;line-height: 28px;margin-left: 25%;font-size: 14px;}
@@ -178,7 +179,8 @@ border-radius: 15px;position: relative;}
 
 
 
-.quanju .btn-register{display: block;width: 80px;height: 25px;margin:20px auto 10px;border-radius: 10px;border: none;outline: none;color: #000000;}
+.quanju .btn-register{display: block;width: 40%;height: 30px;margin:20px auto 10px;border-radius: 10px;border: none;outline: none;color: #000;background-color: #BCE8F1;font-size: 1.2em;font-family: "黑体";}
+.quanju .register{height: 80%;}
 .quanju .register .input-group{margin-bottom:20px ;}
 .quanju .register .input-group:last-child{margin-bottom:0 ;}
 .quanju .register .modal-footer{margin-top:0}
