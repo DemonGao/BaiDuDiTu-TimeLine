@@ -176,19 +176,25 @@ var TimerLine = {
 	ajaxCreate: function() {
 		var That = this;
 		var containerDiv = That.data.containerDiv;
-		$.ajax({
-			type: "get",
-			url: "js/json.json",
-			dataType: 'json',
-			success: function(data) {
-				containerDiv = document.getElementById(containerDiv); //容器id
-				That.rubbish_datas = data.result.datas; //
-				//console.log(That.rubbish_datas);
-				That.create(containerDiv, That.rubbish_datas);
-				//日期时间绑定
-				That.Utils.bindEvent();
-			}
-		});
+		// $.ajax({
+		// 	type: "get",
+		// 	url: "js/json.json",
+		// 	dataType: 'json',
+		// 	success: function(data) {
+		// 		containerDiv = document.getElementById(containerDiv); //容器id
+		// 		That.rubbish_datas = data.result.datas; //
+		// 		//console.log(That.rubbish_datas);
+		// 		That.create(containerDiv, That.rubbish_datas);
+		// 		//日期时间绑定
+		// 		That.Utils.bindEvent();
+		// 	}
+		// });
+		containerDiv = document.getElementById(containerDiv); //容器id
+		That.rubbish_datas = data.result.datas; //
+		//console.log(That.rubbish_datas);
+		That.create(containerDiv, That.rubbish_datas);
+		//日期时间绑定
+		That.Utils.bindEvent();
 	},
 	create: function(containerDiv, datas) {
 		var That = this;
@@ -263,6 +269,162 @@ var TimerLine = {
 }
 
 
-
+var data ={
+	"reason": "successed!",
+	"result": {
+	"datas": [
+		{
+			"date": "2016-08-10",
+			"info": [
+				{
+					"status": "success",
+					"point": "121.345093,37.528502",
+					"title": "鲁东大学1号垃圾箱"
+				},
+				{
+					"status": "error",
+					"point": "121.375593,37.538502",
+					"title": "鲁东大学2号垃圾箱"
+				},
+				{
+					"status": "success",
+					"point": "121.365593,37.538502",
+					"title": "鲁东大学3号垃圾箱"
+				},
+				{
+					"status": "setting",
+					"point": "121.355593,37.527502",
+					"title": "鲁东大学4号垃圾箱"
+				},
+				{
+					"status": "error",
+					"point": "121.365593,37.528502",
+					"title": "鲁东大学5号垃圾箱"
+				}
+			]
+		},
+		{
+			"date": "2016-08-11",
+			"info": [
+				{
+					"status": "success",
+					"point": "121.345093,37.528502",
+					"title": "鲁东大学1号垃圾箱"
+				},
+				{
+					"status": "success",
+					"point": "121.375593,37.538502",
+					"title": "鲁东大学2号垃圾箱"
+				},
+				{
+					"status": "success",
+					"point": "121.365593,37.538502",
+					"title": "鲁东大学3号垃圾箱"
+				},
+				{
+					"status": "success",
+					"point": "121.355593,37.527502",
+					"title": "鲁东大学4号垃圾箱"
+				},
+				{
+					"status": "success",
+					"point": "121.365593,37.528502",
+					"title": "鲁东大学5号垃圾箱"
+				}
+			]
+		},
+		{
+			"date": "2016-08-12",
+			"info": [
+				{
+					"status": "success",
+					"point": "121.345093,37.528502",
+					"title": "鲁东大学1号垃圾箱"
+				},
+				{
+					"status": "error",
+					"point": "121.375593,37.538502",
+					"title": "鲁东大学2号垃圾箱"
+				},
+				{
+					"status": "success",
+					"point": "121.365593,37.538502",
+					"title": "鲁东大学3号垃圾箱"
+				},
+				{
+					"status": "setting",
+					"point": "121.355593,37.527502",
+					"title": "鲁东大学4号垃圾箱"
+				},
+				{
+					"status": "success",
+					"point": "121.365593,37.528502",
+					"title": "鲁东大学5号垃圾箱"
+				}
+			]
+		},
+		{
+			"date": "2016-08-13",
+			"info": [
+				{
+					"status": "success",
+					"point": "121.345093,37.528502",
+					"title": "鲁东大学1号垃圾箱"
+				},
+				{
+					"status": "setting",
+					"point": "121.375593,37.538502",
+					"title": "鲁东大学2号垃圾箱"
+				},
+				{
+					"status": "setting",
+					"point": "121.365593,37.538502",
+					"title": "鲁东大学3号垃圾箱"
+				},
+				{
+					"status": "error",
+					"point": "121.355593,37.527502",
+					"title": "鲁东大学4号垃圾箱"
+				},
+				{
+					"status": "setting",
+					"point": "121.365593,37.528502",
+					"title": "鲁东大学5号垃圾箱"
+				}
+			]
+		},
+		{
+			"date": "2016-08-14",
+			"info": [
+				{
+					"status": "success",
+					"point": "121.345093,37.528502",
+					"title": "鲁东大学1号垃圾箱"
+				},
+				{
+					"status": "success",
+					"point": "121.375593,37.538502",
+					"title": "鲁东大学2号垃圾箱"
+				},
+				{
+					"status": "success",
+					"point": "121.365593,37.538502",
+					"title": "鲁东大学3号垃圾箱"
+				},
+				{
+					"status": "success",
+					"point": "121.355593,37.527502",
+					"title": "鲁东大学4号垃圾箱"
+				},
+				{
+					"status": "success",
+					"point": "121.365593,37.528502",
+					"title": "鲁东大学5号垃圾箱"
+				}
+			]
+		}
+	]
+}
+}
 
 TimerLine.init();
